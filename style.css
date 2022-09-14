@@ -45,9 +45,9 @@ h1 {
 
 .color-picker {
   width: 75px;
-  height: 75px;
+  /* height: 75px; */
   margin: 0 auto;
-  border: none;
+  /* border: none; */
   cursor: pointer;
 }
 .color-picker::-webkit-color-swatch {
@@ -60,7 +60,7 @@ h1 {
   height: 90%;
 }
 .palette {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 400px;
   height: 400px;
   display: grid;

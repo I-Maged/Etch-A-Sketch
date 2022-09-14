@@ -1,19 +1,23 @@
-let palette = document.querySelector('.palette');
-let header = document.querySelector('.header');
-let colorPicker = document.querySelector('.color-picker');
+const palette = document.querySelector('.palette');
+const header = document.querySelector('.header');
+const colorPicker = document.querySelector('.color-picker');
+const rangePicker = document.querySelector('.range-picker');
 
-palette.style.gridTemplateColumns = `repeat(${50} , 1fr)`;
-palette.style.gridTemplateRows = `repeat(${50} , 1fr)`;
+const drawGrid = (size) => {
+  palette.innerHTML = '';
 
-console.log('Hello Etch -A-Sketch');
+  palette.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+  palette.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-for (let i = 0; i < 2500; i++) {
-  let square = document.createElement('div');
-  square.style.backgroundColor = 'green';
-  square.style.border = '1px solid #cccccc';
-  palette.appendChild(square);
-}
+  let amount = size ** 2;
 
-colorPicker.addEventListener('input', (e) => {
-  console.log(e.target.value);
-});
+  for (let i = 0; i < amount; i++) {
+    let square = document.createElement('div');
+    square.style.backgroundColor = 'green';
+    square.style.border = '1px solid #cccccc';
+    palette.appendChild(square);
+  }
+};
+
+drawGrid(rangePicker.value);
+rangePicker.onchange = (e) => drawGrid(Number(e.target.value));
