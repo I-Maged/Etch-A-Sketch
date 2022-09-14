@@ -9,9 +9,7 @@ const drawGrid = (size) => {
   palette.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
   palette.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-  let amount = size ** 2;
-
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < size * size; i++) {
     let square = document.createElement('div');
     square.style.backgroundColor = 'green';
     square.style.border = '1px solid #cccccc';
