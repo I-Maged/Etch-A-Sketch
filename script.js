@@ -17,5 +17,11 @@ const drawGrid = (size) => {
   }
 };
 
+//listener to grid size
+rangePicker.addEventListener('input', (e) => drawGrid(Number(e.target.value)));
+
+//listener to drawing color
+colorPicker.addEventListener('input', (e) => console.log(e.target.value));
+
+//Draw grid at start
 drawGrid(rangePicker.value);
-rangePicker.onchange = (e) => drawGrid(Number(e.target.value));
