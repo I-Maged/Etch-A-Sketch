@@ -5,7 +5,7 @@ const colorPicker = document.querySelector('.color-picker');
 const rangePicker = document.querySelector('.range-picker');
 
 //Controls color
-let color = `#cccccc`;
+let color = `#000000`;
 
 //listener to color change
 colorPicker.addEventListener('input', (e) => {
@@ -27,11 +27,10 @@ const drawGrid = (size) => {
 
   for (let i = 0; i < size * size; i++) {
     let square = document.createElement('div');
-    square.style.backgroundColor = 'green';
+    square.style.backgroundColor = 'white';
     square.style.border = 'none';
     square.style.border = '1px solid #cccccc';
-    square.setAttribute('draggable', 'false');
-    square.classList.add('mystyle');
+    square.classList.add('colorSquare');
     palette.appendChild(square);
 
     //listener to grid click
@@ -41,7 +40,7 @@ const drawGrid = (size) => {
 
 //listener to grid hovering
 palette.addEventListener('mouseover', (e) => {
-  if (e.target.className == 'mystyle' && e.buttons == 1) draw(e);
+  if (e.target.className == 'colorSquare' && e.buttons == 1) draw(e);
 });
 
 //changes square color
