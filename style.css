@@ -10,11 +10,13 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #ededed;
 }
 
 .header,
 .panel,
-.grid-container {
+.grid-container,
+.panel-controls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,34 +37,58 @@ h1 {
 .main {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 10px;
+  gap: 100px;
+  align-items: center;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .panel {
   font-size: 24px;
+  width: 100%;
+  height: 300px;
+  background-color: #ffffff;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.panel-controls {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grid-size-tex {
+  text-align: center;
 }
 
 .color-picker {
   width: 75px;
-  /* height: 75px; */
-  margin: 0 auto;
-  /* border: none; */
+  height: 75px;
+  border: none;
   cursor: pointer;
+  background-color: inherit;
 }
 .color-picker::-webkit-color-swatch {
   border: none;
   border-radius: 50%;
 }
+
 .grid-container {
   border: 3px solid red;
-  width: 90%;
-  height: 90%;
+  /* width: 90%; */
+  /* height: 90%; */
+  height: 100%;
+  width: 100%;
 }
 .palette {
   border: 1px solid black;
-  width: 400px;
-  height: 400px;
+  /* width: 400px; */
+  width: 100%;
+  /* height: 400px; */
+  height: 100%;
   display: grid;
 }
 

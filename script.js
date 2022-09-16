@@ -1,5 +1,6 @@
 const palette = document.querySelector('.palette');
 const header = document.querySelector('.header');
+const sizeText = document.querySelector('.grid-size-tex');
 const colorPicker = document.querySelector('.color-picker');
 const rangePicker = document.querySelector('.range-picker');
 
@@ -19,6 +20,7 @@ function setColor(newColor) {
 //draws grid
 const drawGrid = (size) => {
   palette.innerHTML = '';
+  sizeText.innerHTML = `${size} X ${size}`;
 
   palette.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
   palette.style.gridTemplateRows = `repeat(${size} , 1fr)`;
@@ -26,15 +28,15 @@ const drawGrid = (size) => {
   for (let i = 0; i < size * size; i++) {
     let square = document.createElement('div');
     square.style.backgroundColor = 'green';
-    square.setAttribute('draggable', 'false');
+    square.style.border = 'none';
     square.style.border = '1px solid #cccccc';
+    square.setAttribute('draggable', 'false');
     square.classList.add('mystyle');
     palette.appendChild(square);
 
     //listener to grid click
     square.addEventListener('mousedown', draw);
   }
-  console.log(color);
 };
 
 //listener to grid hovering

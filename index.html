@@ -17,16 +17,25 @@
       <div class="main">
         <div class="panel">
           <div class="panel-title">Color picker</div>
-          <div class="color-selector">
-            <input type="color" class="color-picker" />
+          <div class="panel-controls">
+            <div class="color-selector">
+              <input type="color" class="color-picker" />
+            </div>
+            <div class="grid-size">
+              <div>
+                <p class="grid-size-tex"></p>
+              </div>
+              <div>
+                <input
+                  type="range"
+                  value="16"
+                  min="1"
+                  max="64"
+                  class="range-picker"
+                />
+              </div>
+            </div>
           </div>
-          <input
-            type="range"
-            value="16"
-            min="1"
-            max="64"
-            class="range-picker"
-          />
         </div>
         <div class="grid-container">
           <div class="palette"></div>
