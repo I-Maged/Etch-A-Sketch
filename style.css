@@ -77,6 +77,7 @@ h1 {
   border: none;
   cursor: pointer;
   background-color: inherit;
+  transition: transform 0.2s;
 }
 .color-picker::-webkit-color-swatch {
   border: none;
@@ -84,12 +85,17 @@ h1 {
 }
 
 .reset-btn {
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: 'Mukta', sans-serif;
+  font-size: 24px;
   padding: 8px 15px;
   border: none;
   background-color: var(--secondary-grey);
+  transition: transform 0.2s;
+}
+
+.reset-btn:hover,
+.color-picker:hover {
+  transform: scale(1.1);
 }
 
 .shadow {

@@ -3,6 +3,9 @@ const header = document.querySelector('.header');
 const sizeText = document.querySelector('.grid-size-tex');
 const colorPicker = document.querySelector('.color-picker');
 const rangePicker = document.querySelector('.range-picker');
+const resetBtn = document.querySelector('.reset-btn');
+
+resetBtn.addEventListener('click', reset);
 
 //Controls color
 let color = `#000000`;
@@ -53,3 +56,10 @@ rangePicker.addEventListener('input', (e) => drawGrid(Number(e.target.value)));
 
 //Draw grid at start
 drawGrid(rangePicker.value);
+
+//Reset function
+function reset() {
+  color = `#000000`;
+  colorPicker.value = `#000000`;
+  drawGrid(16);
+}
