@@ -12,13 +12,8 @@ let color = `#000000`;
 
 //listener to color change
 colorPicker.addEventListener('input', (e) => {
-  setColor(e.target.value);
+  color = colorPicker.value;
 });
-
-//changes color
-function setColor(newColor) {
-  color = newColor;
-}
 
 //draws grid
 const drawGrid = (size) => {
@@ -61,5 +56,6 @@ drawGrid(rangePicker.value);
 function reset() {
   color = `#000000`;
   colorPicker.value = `#000000`;
-  drawGrid(16);
+  rangePicker.value = 16;
+  drawGrid(rangePicker.value);
 }
